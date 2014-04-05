@@ -1,0 +1,19 @@
+{
+  "name": "Ripples",
+  "version": "0.0.0",
+  "description": "A basic backbone visualization",
+  "private": true,
+  "dependencies": {
+    "gulp": "^3.6.0",
+    "gulp-util": "^2.2.14",
+    "browserify": "^3.38.0",
+    "gulp-watch": "^0.5.3",
+    "es6ify": "^1.1.0",
+    "backbone": "^1.1.2",
+    "jquery": "^2.1.0"
+  },
+  "devDependencies": {},
+  "author": "Nate Hunzaker",
+  "license": "MIT",
+  "homepage": "http://natehunzaker.com"
+}
