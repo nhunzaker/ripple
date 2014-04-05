@@ -38,7 +38,7 @@ export class Sonic extends View {
 		var ctx = this.ctx;
 
 		ctx.globalCompositeOperation = "darken";
-		ctx.fillStyle = "rgba(20, 5, 0, 0.1)";
+		ctx.fillStyle = "rgba(40, 10, 0, 0.1)";
 		ctx.fillRect(0, 0, this.el.width, this.el.height);
 
 		ctx.globalCompositeOperation = 'lighten';

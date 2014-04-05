@@ -4,6 +4,7 @@ var watch      = require('gulp-watch');
 var browserify = require('browserify');
 var es6ify     = require('es6ify');
 var fs         = require('fs');
+var source     = require('vinyl-source-stream');
 
 es6ify.traceurOverrides = {
 	arrowFunctions: true,
@@ -21,13 +22,14 @@ gulp.task('scripts', function() {
 	.on('error', function (err) {
 		console.error(err);
 	})
-	.pipe(fs.createWriteStream('./build.js'));
+	.pipe(source('build.js'))
+	.pipe(gulp.dest('./build'));
 });
 
 gulp.task('watch', function() {
 	gulp.watch([
 		'**/*.js',
-		'!build.js',
+		'!build/**/*.js',
 		'!node_modules/**/*.js'
 	], ['scripts']);
 });
