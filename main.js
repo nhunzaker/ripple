@@ -2,9 +2,9 @@ var Backbone = require('backbone');
 Backbone.$   = require('jquery');
 
 import {Pings} from './collections/pings';
-import {Sonic} from './views/sonic';
+import {Ripples} from './views/ripples';
 
-var view = new Sonic({
+var view = new Ripples({
 	el: canvas,
 	collection: new Pings()
 });

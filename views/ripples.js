@@ -2,8 +2,7 @@ import {View} from 'backbone';
 
 var $ = require('jquery');
 
-export class Sonic extends View {
-
+export class Ripples extends View {
 	events() {
 		return {
 			click: 'handleClick'
@@ -11,11 +10,10 @@ export class Sonic extends View {
 	}
 
 	initialize() {
-		this.resize();
+		this.fitScreen();
 		this.ctx = this.el.getContext('2d');
-		$(window).on('resize.ping-' + this.cid, this.resize.bind(this));
+		$(window).on('resize.ping-' + this.cid, this.fitScreen.bind(this));
 	}
-
 
 	handleClick(e) {
 		this.collection.add({
@@ -29,7 +27,7 @@ export class Sonic extends View {
 		Backbone.View.prototype.remove.call(this, arguments);
 	}
 
-	resize() {
+	fitScreen() {
 		this.el.width  = window.innerWidth;
 		this.el.height = window.innerHeight;
 	}
