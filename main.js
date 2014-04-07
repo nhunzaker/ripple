@@ -10,14 +10,12 @@ var view = new Ripples({
 });
 
 requestAnimationFrame(function loop() {
-	view.render();
-	requestAnimationFrame(loop);
-});
-
-setInterval(function() {
 	view.$el.trigger({
 		type: 'click',
 		pageX: canvas.width * Math.random(),
 		pageY: canvas.width * Math.random()
-	})
-}, 1000 / 60)
+	});
+
+	view.render();
+	requestAnimationFrame(loop);
+});
