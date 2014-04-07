@@ -38,16 +38,14 @@ var view = new Ripples({
   collection: new Pings()
 });
 requestAnimationFrame(function loop() {
-  view.render();
-  requestAnimationFrame(loop);
-});
-setInterval(function() {
   view.$el.trigger({
     type: 'click',
     pageX: canvas.width * Math.random(),
     pageY: canvas.width * Math.random()
   });
-}, 1000 / 60);
+  view.render();
+  requestAnimationFrame(loop);
+});
 
 
 },{"./collections/pings":1,"./views/ripples":9,"backbone":4,"jquery":8}],3:[function(require,module,exports){
